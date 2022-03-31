@@ -1,0 +1,53 @@
+{
+  "name": "eInstrumental",
+  "version": "1.0.0",
+  "description": "绘·伴奏",
+  "main": "main.js",
+  "homepage": ".",
+  "author": "某亚瑟",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "package:mac": "electron-packager ./build 绘·伴奏 --out ./out --app-version 1.0.0 --overwrite --asar --arch=x64 --ignore=./build/libs --extra-resource=./build/libs",
+    "package:win": "electron-packager .\\build 绘·伴奏 --out .\\out --app-version 1.0.0 --overwrite --asar --arch=x64 --ignore=.\\build\\libs --extra-resource=.\\build\\libs",
+    "electron-start": "electron .",
+    "electron-package:mac": "npm run build && cp package.json build/ && npm run package:mac",
+    "electron-package:mac:mac": "npm run electron-package:mac -- -- --platform darwin --icon=./icon/icon.icns",
+    "electron-package:mac:win": "npm run electron-package:mac -- -- --platform win32 --icon=./icon/icon.ico",
+    "electron-package:win": "npm run build && copy package.json build\\ /Y && npm run package:win",
+    "electron-package:win:win": "npm run electron-package:win -- -- --platform win32 --icon=.\\icon\\icon.ico"
+  },
+  "devDependencies": {
+    "electron": "^17.1.2",
+    "electron-packager": "^15.4.0"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.19.3",
+    "node-sass": "npm:dart-sass@^1.25.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

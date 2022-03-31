@@ -1,0 +1,53 @@
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  :global {
+    .title {
+      font-size: 48px;
+    }
+
+    .progress {
+      margin: 32px;
+    }
+
+    .dragbox {
+      width: 60vw;
+      height: 40vh;
+    }
+
+    .ee {
+      height: 192px;
+      width: 192px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .background {
+      position: fixed;
+      z-index: -9999;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+
+      img {
+        height: 100%;
+        opacity: .1;
+      }
+    }
+  }
+}
+
+
